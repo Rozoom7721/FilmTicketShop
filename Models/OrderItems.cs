@@ -8,7 +8,7 @@ namespace FilmTicketShop.Models
         [Key]
         public int Id { get; set; }
         
-        public int Amout { get; set; }
+        public int Amount { get; set; }
 
         public double Price { get; set; }
 
