@@ -1,5 +1,8 @@
 ﻿using FilmTicketShop.Data.Enums;
+using FilmTicketShop.Data.Static;
 using FilmTicketShop.Models;
+using Microsoft.AspNetCore.Identity;
+using System.Xml.Schema;
 
 namespace FilmTicketShop.Data
 {
@@ -313,5 +316,50 @@ namespace FilmTicketShop.Data
 			}
 		}
 
+		public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+		{
+			using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+			{
+				var roleMenager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+				if(!await roleMenager.RoleExistsAsync(UserRoles.Admin))
+					await roleMenager.CreateAsync(new IdentityRole(UserRoles.Admin));
+
+                if (!await roleMenager.RoleExistsAsync(UserRoles.User))
+                    await roleMenager.CreateAsync(new IdentityRole(UserRoles.User));
+
+                var userMenager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+				string adminUserEmail = "admin@admin.pl";
+
+                var adminUser = await userMenager.FindByEmailAsync(adminUserEmail);
+				if (adminUser == null)
+				{
+					var newAdminUser = new ApplicationUser()
+					{
+						FullName = "Admin Admin",
+						UserName = "admin",
+						Email = adminUserEmail,
+						EmailConfirmed = true
+					};
+					await userMenager.CreateAsync(newAdminUser, "@Admin123");
+					await userMenager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+				}
+                string UserEmail = "user@user.pl";
+
+                var User = await userMenager.FindByEmailAsync(UserEmail);
+                if (User == null)
+                {
+                    var newUser = new ApplicationUser()
+                    {
+                        FullName = "User User",
+                        UserName = "user",
+                        Email = UserEmail,
+                        EmailConfirmed = true
+                    };
+                    await userMenager.CreateAsync(newUser, "@User12345");
+                    await userMenager.AddToRoleAsync(newUser, UserRoles.Admin);
+                }
+            }
+		}
 	}
 }
