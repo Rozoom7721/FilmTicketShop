@@ -4,10 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using FilmTicketShop.Models;
+using Microsoft.AspNetCore.Authorization;
+using FilmTicketShop.Data.Static;
 
 namespace FilmTicketShop.Controllers
 {
-	public class ActorsController : Controller
+    [Authorize(Roles = UserRoles.Admin)]
+    public class ActorsController : Controller
 	{
 		private readonly IActorsService _service;
 
@@ -15,6 +18,8 @@ namespace FilmTicketShop.Controllers
 		{
 			_service = service;
 		}
+
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
 		{
 			var data = await _service.GetAllAsync();
@@ -40,9 +45,9 @@ namespace FilmTicketShop.Controllers
 
 		}
 
-		//Get: Actors/Details/1
-
-		public async Task<IActionResult> Details(int id)
+        //Get: Actors/Details/1
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int id)
 		{
 			var actorDetails = await _service.GetByIdAsync(id);
 

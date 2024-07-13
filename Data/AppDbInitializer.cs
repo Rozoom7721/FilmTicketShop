@@ -23,34 +23,34 @@ namespace FilmTicketShop.Data
 					{
 						new Cinema()
 						{
-							Name = "Cinema 1",
-							LogoURL = "http://dotnethow.net/images/cinemas/cinema-1.jpeg",
-							Description = "This is the description of the first cinema"
+							Name = "Kino 1",
+							LogoURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cinema_City.svg/1200px-Cinema_City.svg.png",
+							Description = "Opis 1 kina"
 						},
 						new Cinema()
 						{
-							Name = "Cinema 2",
-							LogoURL = "http://dotnethow.net/images/cinemas/cinema-2.jpeg",
-							Description = "This is the description of the first cinema"
-						},
+							Name = "Kino 2",
+							LogoURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Kino_Indonesia_logo.svg/2560px-Kino_Indonesia_logo.svg.png",
+							Description = "Opis 2 kina"
+                        },
 						new Cinema()
 						{
-							Name = "Cinema 3",
-							LogoURL = "http://dotnethow.net/images/cinemas/cinema-3.jpeg",
-							Description = "This is the description of the first cinema"
-						},
+							Name = "Kino 3",
+							LogoURL = "https://st3.depositphotos.com/1588812/13325/v/450/depositphotos_133255394-stock-illustration-vector-logo-cinema.jpg",
+							Description = "Opis 3 kina"
+                        },
 						new Cinema()
 						{
-							Name = "Cinema 4",
-							LogoURL = "http://dotnethow.net/images/cinemas/cinema-4.jpeg",
-							Description = "This is the description of the first cinema"
-						},
+							Name = "Kino 4",
+							LogoURL = "https://galeriasanowa.pl/wp-content/uploads/2020/03/51645236-1884902444947672-5702830908176859136-n.png",
+							Description = "Opis 4 kina"
+                        },
 						new Cinema()
 						{
-							Name = "Cinema 5",
-							LogoURL = "http://dotnethow.net/images/cinemas/cinema-5.jpeg",
-							Description = "This is the description of the first cinema"
-						},
+							Name = "Kino 5",
+							LogoURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Ale_Kino%21_2006_-_Logo.svg/2560px-Ale_Kino%21_2006_-_Logo.svg.png",
+							Description = "Opis 5 kina"
+                        },
 					});
 					context.SaveChanges();
 				}
@@ -61,35 +61,35 @@ namespace FilmTicketShop.Data
 					{
 						new Actor()
 						{
-							FullName = "Actor 1",
-							Bio = "This is the Bio of the first actor",
-							ProfilePictureURL = "http://dotnethow.net/images/actors/actor-1.jpeg"
+							FullName = "Aktor 1",
+							Bio = "To jest biografia 1 aktora",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/00/15/15/449990.2.jpg"
 
-						},
+                        },
 						new Actor()
 						{
-							FullName = "Actor 2",
-							Bio = "This is the Bio of the second actor",
-							ProfilePictureURL = "http://dotnethow.net/images/actors/actor-2.jpeg"
-						},
+							FullName = "Aktor 2",
+							Bio = "To jest biografia 2 aktora",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/28/46/2846/452237.2.jpg"
+                        },
 						new Actor()
 						{
-							FullName = "Actor 3",
-							Bio = "This is the Bio of the second actor",
-							ProfilePictureURL = "http://dotnethow.net/images/actors/actor-3.jpeg"
-						},
+							FullName = "Aktor 3",
+							Bio = "To jest biografia 3 aktora",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/18/47/2271847/393355.1.jpg"
+                        },
 						new Actor()
 						{
-							FullName = "Actor 4",
-							Bio = "This is the Bio of the second actor",
-							ProfilePictureURL = "http://dotnethow.net/images/actors/actor-4.jpeg"
-						},
+							FullName = "Aktor 4",
+							Bio = "To jest biografia 4 aktora",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/97/97/99797/449885.2.jpg"
+                        },
 						new Actor()
 						{
-							FullName = "Actor 5",
-							Bio = "This is the Bio of the second actor",
-							ProfilePictureURL = "http://dotnethow.net/images/actors/actor-5.jpeg"
-						}
+							FullName = "Aktor 5",
+							Bio = "To jest biografia 5 aktora",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/78/41/7841/457270.2.jpg"
+                        }
 					});
 					context.SaveChanges();
 				}
@@ -100,35 +100,35 @@ namespace FilmTicketShop.Data
 					{
 						new Producer()
 						{
-							FullName = "Producer 1",
-							Bio = "This is the Bio of the first actor",
-							ProfilePictureURL = "http://dotnethow.net/images/producers/producer-1.jpeg"
+							FullName = "Reżyser 1",
+							Bio = "Biografia 1 reżysera",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/01/11/111/449997.2.jpg"
 
-						},
+                        },
 						new Producer()
 						{
-							FullName = "Producer 2",
-							Bio = "This is the Bio of the second actor",
-							ProfilePictureURL = "http://dotnethow.net/images/producers/producer-2.jpeg"
-						},
+							FullName = "Reżyser 2",
+							Bio = "Biografia 2 reżysera",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/00/62/62/452006.2.jpg"
+                        },
 						new Producer()
 						{
-							FullName = "Producer 3",
-							Bio = "This is the Bio of the second actor",
-							ProfilePictureURL = "http://dotnethow.net/images/producers/producer-3.jpeg"
-						},
+							FullName = "Reżyser 3",
+							Bio = "Biografia 3 reżysera",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/03/39/339/450701.2.jpg"
+                        },
 						new Producer()
 						{
-							FullName = "Producer 4",
-							Bio = "This is the Bio of the second actor",
-							ProfilePictureURL = "http://dotnethow.net/images/producers/producer-4.jpeg"
-						},
+							FullName = "Reżyser 4",
+							Bio = "Biografia 4 reżysera",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/51/64/55164/467574.2.jpg"
+                        },
 						new Producer()
 						{
-							FullName = "Producer 5",
-							Bio = "This is the Bio of the second actor",
-							ProfilePictureURL = "http://dotnethow.net/images/producers/producer-5.jpeg"
-						}
+							FullName = "Reżyser 5",
+							Bio = "Biografia 5 reżysera",
+							ProfilePictureURL = "https://fwcdn.pl/ppo/00/96/96/450689.2.jpg"
+                        }
 					});
 					context.SaveChanges();
 				}
@@ -139,10 +139,10 @@ namespace FilmTicketShop.Data
 					{
 						new Movie()
 						{
-							Title = "Life",
-							Description = "This is the Life movie description",
+							Title = "MÓW DO MNIE!",
+							Description = "To jest opis filmu",
 							Price = 39.50,
-							ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
+							ImageURL = "https://fwcdn.pl/fpo/66/57/10026657/8074603.6.jpg",
 							StartDate = DateTime.Now.AddDays(-10),
 							EndDate = DateTime.Now.AddDays(10),
 							CinemaId = 3,
@@ -151,10 +151,10 @@ namespace FilmTicketShop.Data
 						},
 						new Movie()
 						{
-							Title = "The Shawshank Redemption",
-							Description = "This is the Shawshank Redemption description",
+							Title = "NIENAWISTNA ÓSEMKA",
+							Description = "To jest opis filmu",
 							Price = 29.50,
-							ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
+							ImageURL = "https://fwcdn.pl/fpo/41/92/714192/7715662_1.6.jpg",
 							StartDate = DateTime.Now,
 							EndDate = DateTime.Now.AddDays(3),
 							CinemaId = 1,
@@ -163,10 +163,10 @@ namespace FilmTicketShop.Data
 						},
 						new Movie()
 						{
-							Title = "Ghost",
-							Description = "This is the Ghost movie description",
+							Title = "2001: ODYSEJA KOSMICZNA",
+							Description = "To jest opis filmu",
 							Price = 39.50,
-							ImageURL = "http://dotnethow.net/images/movies/movie-4.jpeg",
+							ImageURL = "https://fwcdn.pl/fpo/14/58/1458/7592150_1.6.jpg",
 							StartDate = DateTime.Now,
 							EndDate = DateTime.Now.AddDays(7),
 							CinemaId = 4,
@@ -175,10 +175,10 @@ namespace FilmTicketShop.Data
 						},
 						new Movie()
 						{
-							Title = "Race",
-							Description = "This is the Race movie description",
+							Title = "OPPENHEIMER",
+							Description = "To jest opis filmu",
 							Price = 39.50,
-							ImageURL = "http://dotnethow.net/images/movies/movie-6.jpeg",
+							ImageURL = "https://fwcdn.pl/fpo/28/17/10002817/8072064_2.6.jpg",
 							StartDate = DateTime.Now.AddDays(-10),
 							EndDate = DateTime.Now.AddDays(-5),
 							CinemaId = 1,
@@ -187,10 +187,10 @@ namespace FilmTicketShop.Data
 						},
 						new Movie()
 						{
-							Title = "Scoob",
-							Description = "This is the Scoob movie description",
+							Title = "ANDRIEJ RUBLOW",
+							Description = "To jest opis filmu",
 							Price = 39.50,
-							ImageURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
+							ImageURL = "https://fwcdn.pl/fpo/21/42/32142/8028569_1.6.jpg",
 							StartDate = DateTime.Now.AddDays(-10),
 							EndDate = DateTime.Now.AddDays(-2),
 							CinemaId = 1,
@@ -199,10 +199,10 @@ namespace FilmTicketShop.Data
 						},
 						new Movie()
 						{
-							Title = "Cold Soles",
-							Description = "This is the Cold Soles movie description",
+							Title = "HOUSE OF CARDS",
+							Description = "To jest opis filmu(Tak to jest serial)",
 							Price = 39.50,
-							ImageURL = "http://dotnethow.net/images/movies/movie-8.jpeg",
+							ImageURL = "https://fwcdn.pl/fpo/00/36/620036/7855884_1.6.jpg",
 							StartDate = DateTime.Now.AddDays(3),
 							EndDate = DateTime.Now.AddDays(20),
 							CinemaId = 1,
@@ -338,7 +338,7 @@ namespace FilmTicketShop.Data
 					{
 						FullName = "Admin Admin",
 						UserName = "admin",
-						Email = adminUserEmail,
+						Email = adminUserEmail,  
 						EmailConfirmed = true
 					};
 					await userMenager.CreateAsync(newAdminUser, "@Admin123");
@@ -357,7 +357,7 @@ namespace FilmTicketShop.Data
                         EmailConfirmed = true
                     };
                     await userMenager.CreateAsync(newUser, "@User12345");
-                    await userMenager.AddToRoleAsync(newUser, UserRoles.Admin);
+                    await userMenager.AddToRoleAsync(newUser, UserRoles.User);
                 }
             }
 		}

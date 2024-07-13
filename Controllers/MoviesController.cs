@@ -1,12 +1,15 @@
 ﻿using FilmTicketShop.Data;
 using FilmTicketShop.Data.Services;
+using FilmTicketShop.Data.Static;
 using FilmTicketShop.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilmTicketShop.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
 	public class MoviesController : Controller
 	{
 		private readonly IMoviesService _service;
@@ -15,15 +18,16 @@ namespace FilmTicketShop.Controllers
 		{
 			_service = service;
 		}
-		public async Task<IActionResult> Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
 		{
 			var allMovies = await _service.GetAllAsync(n => n.Cinema);
 			return View(allMovies);
 		}
 
-		//GET: Movie/Details/1
-
-		public async Task<IActionResult> Details(int id)
+        //GET: Movie/Details/1
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int id)
 		{
 			var movieDetail = await _service.GetMovieByIdAsync(id);
 			return View(movieDetail);
@@ -55,7 +59,7 @@ namespace FilmTicketShop.Controllers
 			}
 			await _service.AddNewMovieAsync(movie);
 
-			return RedirectToAction("Index");
+			return RedirectToAction(nameof(Index));
 		}
         //GET: Movie/Edit/1
 
@@ -103,6 +107,7 @@ namespace FilmTicketShop.Controllers
 
             return RedirectToAction("Index");
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
             var allMovies = await _service.GetAllAsync(n => n.Cinema);

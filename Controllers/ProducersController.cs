@@ -1,12 +1,15 @@
 ﻿using FilmTicketShop.Data;
 using FilmTicketShop.Data.Services;
+using FilmTicketShop.Data.Static;
 using FilmTicketShop.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilmTicketShop.Controllers
 {
-	public class ProducersController : Controller
+    [Authorize(Roles = UserRoles.Admin)]
+    public class ProducersController : Controller
 	{
 		private readonly IProducerService _service;
 
@@ -14,14 +17,15 @@ namespace FilmTicketShop.Controllers
 		{
 			_service = service;
 		}
-		public async Task<IActionResult> Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
 		{
 			var allProducers = await _service.GetAllAsync();
 			return View(allProducers);
 		}
 
 		//GET: producers/detiles/1
-
+		[AllowAnonymous]
 		public async Task<IActionResult> Details(int id)
 		{
 			var producerDetails = await _service.GetByIdAsync(id);

@@ -1,12 +1,15 @@
 ﻿using FilmTicketShop.Data;
 using FilmTicketShop.Data.Services;
+using FilmTicketShop.Data.Static;
 using FilmTicketShop.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilmTicketShop.Controllers
 {
-	public class CinemasController : Controller
+    [Authorize(Roles = UserRoles.Admin)]
+    public class CinemasController : Controller
 	{
 		private readonly ICinemasService _service;
 
@@ -14,7 +17,8 @@ namespace FilmTicketShop.Controllers
 			{
 				_service = service;
 			}
-		public async Task<IActionResult> Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
 		{
 			var allCinemas = await _service.GetAllAsync();
 			return View(allCinemas);
@@ -35,7 +39,7 @@ namespace FilmTicketShop.Controllers
 		}
 
         //GET: Cinemas/Details/1
-
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var cinemaDetails = await _service.GetByIdAsync(id);

@@ -26,19 +26,23 @@
 							<a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index"><i class="bi bi-film"></i> Filmy</a>
 						</li>
 
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="bi bi-gear"></i> Zarządzanie
-							</a>
+						@if (User.Identity.IsAuthenticated)
+						{
 
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels"></i> Kina</a>
-								<a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-headset"></i> Producenic</a>
-								<a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-square"></i> Aktorzy</a>
-							</div>
-						</li>
+
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="bi bi-gear"></i> Zarządzanie
+								</a>
+
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels"></i> Kina</a>
+									<a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-headset"></i> Producenic</a>
+									<a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-square"></i> Aktorzy</a>
+								</div>
+							</li>
+						}
 					</ul>
-
 					<form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filter" style="padding-right: 25px;">
 						<input name="searchString" type="text" class="form-control" placeholder="Wyszukaj filmu..." aria-label="Recipient's username" aria-describedby="button-addon2">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
@@ -47,23 +51,11 @@
 					<ul class="navbar-nav">
 						@await Component.InvokeAsync("ShoppingCartSummary")
 					</ul>
-					
-					<a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Account" asp-action="Login">
-						<i class="bi bi-box-arrow-in-right"></i> Zaloguj się
-					</a>
 
-					<a class="btn btn-outline-primary my-2 my-sm-0" asp-controller="Account" asp-action="Register">
-						<i class="bi bi-person-plus"></i> Zarejestruj się
-					</a>
 
-					<div class="dropdown">
-						<button class="btn btn-outline-success dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown" aria-expanded"false"><i class="bi bi-person-badge"></i> Witaj Użytkowniku</button>
-						<u1 class="dropdown-menu" aria-labelledby="profile-btn">
-							<li>
-								<a class="dropdown-item" asp-controller="Orders" asp-action="Index"><i class="bi bi-list"></i>Zamówienia</a>
-							</li>
-						</u1>
-					</div>
+
+					<partial name="_Identity.cshtml" />
+
 				</div>
 			</div>
 		</nav>

@@ -8,7 +8,7 @@ namespace FilmTicketShop.Models
 		[Key]
 		public int Id { get; set; }
 
-		[Display(Name ="Zdjęcie producenta")]
+		[Display(Name = "Zdjęcie Reżysera")]
         [Required(ErrorMessage = "Wmagane zdjęcie Reżysera")]
         public string? ProfilePictureURL { get; set; }
 
